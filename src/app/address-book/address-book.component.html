@@ -1,0 +1,12 @@
+<div class="contactcard" >
+  <div class="card-body">
+    <h4 class="card-title">Contacts <span *ngIf="totalcontacts && totalcontacts!=0">({{totalcontacts}})</span></h4>    
+    <div class="ui message" *ngIf="totalcontacts==0">
+      <div class="header">
+        No contact in your address book        
+      </div>     
+    </div>
+    <app-contact-list (contactsListUpdated)="oncontactsListUpdated($event)"></app-contact-list>
+    <button (click)="addBtnClick()" type="button" class="btn btn-info btn-md btn-space">Add Contact</button>
+  </div>
+</div>
